@@ -1,39 +1,54 @@
-body {
+/* Global Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #1e1e2f, #6a11cb);
     color: white;
     text-align: center;
+    min-height: 100vh;
 }
 
+/* Title */
 .title {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 28px;
 }
 
+/* Container Layout */
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
+/* Subject Card */
 .subject-box {
-    width: 220px;
+    width: 250px;
     padding: 20px;
     border-radius: 20px;
     backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .subject-box:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
 
+.subject-box h2 {
+    font-size: 16px;
+}
+
+/* Dropdown */
 select {
     width: 100%;
     padding: 10px;
@@ -41,8 +56,10 @@ select {
     border: none;
     margin-top: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
+/* Button */
 .calculate-btn {
     margin: 20px;
     padding: 12px 30px;
@@ -51,13 +68,14 @@ select {
     border: none;
     cursor: pointer;
     background: linear-gradient(to right, #ff4e50, #f9d423);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .calculate-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Result */
 #result {
     font-size: 22px;
     margin-top: 20px;
@@ -65,12 +83,11 @@ select {
 }
 
 /* Landing Page */
-
 .landing {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .glass-container {
@@ -78,6 +95,8 @@ select {
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
+    width: 90%;
+    max-width: 500px;
 }
 
 .start-btn {
@@ -88,9 +107,25 @@ select {
     color: white;
     text-decoration: none;
     border-radius: 25px;
+    transition: 0.3s ease;
 }
-@media screen {
-    body{
-        max-width: fit-content;
+
+.start-btn:hover {
+    background: #ff2e2e;
+    transform: scale(1.05);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .subject-box {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .calculate-btn {
+        width: 90%;
     }
 }
